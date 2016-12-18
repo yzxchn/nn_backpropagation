@@ -11,7 +11,6 @@ class Layer:
         self.weights = self._init_weights(input_count, neuron_count)
         self.act_func = act_func
         self.bias = bias if bias else random.random()
-        self.outputs = None
 
     def _init_weights(self, input_count, neuron_count, init_func=None):
         """
@@ -28,18 +27,8 @@ class Layer:
         return weights
 
     def forward_pass(self, inputs):
-        """
-        Get the forward-pass outputs of this layer.
-        Equivalent to g(Wz + b), where g is the activation function of this 
-        layer, z is the inputs to this layer, and b is the bias
-        inputs: a numpy array
-
-        returns: a numpy array
-        """
-        # input size must be equal to the number of rows in the weights matrix
         assert inputs.shape == (len(self.weights),)
-        self.outputs = self.act_func(np.dot(inputs, self.weights) + self.bias)
-        return self.outputs
+        return self.act_func(np.dot(inputs, self.weights) + self.bias)
 
 
 if __name__ == "__main__":
