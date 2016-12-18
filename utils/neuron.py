@@ -41,6 +41,12 @@ class Layer:
         self.outputs = self.act_func(np.dot(inputs, self.weights) + self.bias)
         return self.outputs
 
+class OutputLayer(Layer):
+    pass
+
+class HiddenLayer(Layer):
+    pass
+
 
 if __name__ == "__main__":
     from functions import identity
