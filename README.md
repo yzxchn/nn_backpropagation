@@ -1,4 +1,4 @@
-# nn_backpropagation
+# Implementation of Neural Network and Error Back-propagation
 
 Final project for CS134 Statistical Approaches to NLP. 
 
